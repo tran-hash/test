@@ -1,0 +1,187 @@
+/* General styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    color: rgb(155, 49, 144);
+    line-height: 1.6;
+    background:
+        linear-gradient(to bottom, #903040c7, #a78047d3),
+        url('../image/Ca 1-2 images Cycles/image-lion-background.png') no-repeat center/auto;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background: transparent;
+}
+.logo img { width: 100px; }
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+header nav a {
+    color: blue;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid white;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+/* Divider */
+.section-line {
+    border: none;
+    border-top: 1px solid white;
+    width: 85%;
+    margin: auto;
+}
+
+/* Intro */
+.intro {
+    display: flex;
+    align-items: center;
+    padding: 20px 100px;
+    color: white;
+}
+.intro-text { flex: 1; padding-right: 50px; }
+.intro-text h1 { font-size: 3em; }
+.intro-text .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    color: #e96497;
+    background: white;
+    border: 1px solid white;
+    text-decoration: none;
+}
+.intro-img { text-align: right; }
+.intro-img img { width: 100%; }
+
+/* Services */
+.services {
+    display: flex;
+    gap: 20px;
+    padding: 20px 95px;
+    justify-content: space-around;
+}
+.services article {
+    width: 50%;
+    position: relative;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 250px;
+}
+.services article:hover { transform: translateY(-10px); }
+.services article img {
+    position: absolute;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+    z-index: 1;
+}
+.services article h2,
+.services article p {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    padding: 3px;
+}
+.services article h2 { font-size: 2em; }
+.services article h2 i { font-size: 1.5em; padding: 3px; }
+.services article .title { font-size: 1.2em; font-weight: bold; }
+.services article .description { font-size: 0.9em; }
+
+/* Testimonials */
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    padding: 20px 50px;
+    color: white;
+}
+.testimonials blockquote {
+    padding: 40px;
+    border: 1px solid white;
+    background: transparent;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Tổng quát: giảm padding cho các section */
+  header, .intro, .services, .testimonials {
+    padding: 20px;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+ header nav ul { display: none; } 
+ header nav.active ul { 
+    display: flex; flex-direction: column; 
+    position: absolute; 
+    top: 50px; 
+    left: 0; 
+    width: 100%; 
+    background: rgba(255, 255, 255, 0.9); 
+    z-index: 1000; 
+    max-height: 80vh; 
+    overflow-y: auto; 
+}
+
+header nav a { 
+    padding: 10px; 
+    text-align: center; 
+    margin-top: 20px;
+} 
+
+.hamburger { display: block; }
+
+  /* Intro */
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+  .intro-text {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  .intro-img img {
+    max-width: 100%;
+    height: auto;
+  }
+  .intro-text h1 {
+    font-size: 2em;
+  }
+
+  /* Services */
+  .services {
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+  }
+  .services article {
+    width: 100%;
+    max-width: 400px;
+    min-height: 120px;
+    margin-bottom: 15px;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+  .testimonials blockquote {
+    padding: 20px;
+    margin: 0 auto;
+  }
+}
